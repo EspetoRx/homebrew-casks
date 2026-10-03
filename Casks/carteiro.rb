@@ -1,8 +1,13 @@
 cask "carteiro" do
-  version "0.6.0" # Atualize para a versão correspondente que você está lançando
-  sha256 "0e1b3aeeeeb117c83bddba0e9b9b6cf3868f9e8e7587a0c0081d82fc5c087a87"
+  version "0.7.0"
 
-  url "https://github.com/EspetoRx/carteiro_releases/releases/download/app-v#{version}/Carteiro_#{version}_aarch64.dmg"
+  if Hardware::CPU.intel?
+    url "https://github.com/EspetoRx/carteiro_releases/releases/download/app-v#{version}/Carteiro_#{version}_x64.dmg"
+    sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
+  else
+    url "https://github.com/EspetoRx/carteiro_releases/releases/download/app-v#{version}/Carteiro_#{version}_aarch64.dmg"
+    sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
+  end
 
   name "Carteiro"
   desc "API Tester feito com Tauri + Vue 3"
