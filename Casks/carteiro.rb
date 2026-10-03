@@ -1,5 +1,5 @@
 cask "carteiro" do
-  version "0.7.0"
+  version "0.8.0"
 
   if Hardware::CPU.intel?
     url "https://github.com/EspetoRx/carteiro_releases/releases/download/app-v#{version}/Carteiro_#{version}_x64.dmg"
