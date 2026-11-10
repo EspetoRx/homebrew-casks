@@ -1,12 +1,14 @@
 cask "carteiro" do
-  version "1.0.1"
+  version "1.4.1"
 
-  if Hardware::CPU.intel?
-    url "https://github.com/EspetoRx/carteiro_releases/releases/download/app-v1.0.1/Carteiro_1.0.1_x64.dmg"
-    sha256 "5caa776b601ac9dda5bffaa18ccbcdcbfa57740f5724b03cccfe61c0bc15ec66"
-  else
-    url "https://github.com/EspetoRx/carteiro_releases/releases/download/app-v1.0.1/Carteiro_1.0.1_aarch64.dmg"
-    sha256 "2b2c5632b6bdf6e4aa3034bc591adabeb460ce2643c947b88266d8debc423663"
+  on_arm do
+    url "https://github.com/EspetoRx/carteiro_releases/releases/download/app-v#{version}/Carteiro_#{version}_aarch64.dmg"
+    sha256 "fd3a104496fda984e68891eb52abbe5989a253224e8c851d4f96001caddb9be8"
+  end
+
+  on_intel do
+    url "https://github.com/EspetoRx/carteiro_releases/releases/download/app-v#{version}/Carteiro_#{version}_x64.dmg"
+    sha256 "d83739f552c7c9ba1db67d7879106b494f529c096adec776617cb39f59cf5f73"
   end
 
   name "Carteiro"
